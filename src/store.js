@@ -13,8 +13,10 @@ const store = createStore(
       switch (action.type) {
         case "ANSWER_CALL":
           window.answer && window.answer();
+          break;
         case "REJECT_CALL":
           window.reject && window.reject();
+          break;
       }
       next(action);
     })

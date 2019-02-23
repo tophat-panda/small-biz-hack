@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Endphone extends Component {
   render() {
     return (
-      <button className="phone-btn endphone-btn">
+      <button className="phone-btn endphone-btn" onClick={this.props.onClick}>
         <svg
           width="28px"
           height="15px"
