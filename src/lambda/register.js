@@ -28,13 +28,22 @@ export async function handler(event, context) {
       body: { message: "Unknown error" }
     });
   }
-  //   const { dbo, close } = await getDatabaseConnection();
+  const { dbo, close } = await getDatabaseConnection();
 
-  //   const users = dbo.collection("users");
+  const users = dbo.collection("users");
 
   const hash = await passwordHelpers.hash(password);
 
-  //   await close();
+  const findUser = await users.find({ username }).toArray();
+  if (findUser.length) {
+    await close();
+    return response({
+      statusCode: 400,
+      body: { message: "Bad request" }
+    });
+  }
+  const result = await users.insertOne({ username, hash });
 
-  return response({ body: { username, hash } });
+  await close();
+  return response({ body: { result: result.insertedId } });
 }
