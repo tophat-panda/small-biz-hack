@@ -9,7 +9,7 @@ export default {
         if (err) {
           return rej(err);
         }
-        resolve(hashed);
+        res(hashed);
       });
     });
   },
@@ -19,7 +19,7 @@ export default {
         if (err) {
           return rej(err);
         }
-        resolve(match);
+        res(match);
       });
     });
   }

@@ -12,7 +12,7 @@ export async function handler(event, context) {
   let username;
   let password;
   try {
-    const body = JSON.parse(body);
+    const body = JSON.parse(event.body);
     username = body.username;
     password = body.password;
   } catch (error) {
@@ -32,7 +32,7 @@ export async function handler(event, context) {
 
   //   const users = dbo.collection("users");
 
-  const hash = passwordHelpers.hash(password);
+  const hash = await passwordHelpers.hash(password);
 
   //   await close();
 
