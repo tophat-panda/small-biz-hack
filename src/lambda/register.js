@@ -1,6 +1,6 @@
 import response from "./util/response";
 import getDatabaseConnection from "./util/database";
-import bcrypt from "bcrypt";
+import passwordHelpers from "./util/password-helpers";
 
 export async function handler(event, context) {
   if (event.httpMethod !== "POST") {
@@ -15,9 +15,9 @@ export async function handler(event, context) {
     const body = JSON.parse(body);
     username = body.username;
     password = body.password;
-  } catch (e) {
-    console.log(e);
-    if (e instanceof SyntaxError) {
+  } catch (error) {
+    console.log(error);
+    if (error instanceof SyntaxError) {
       return response({
         statusCode: 400,
         body: { message: "Bad request" }
@@ -32,7 +32,7 @@ export async function handler(event, context) {
 
   //   const users = dbo.collection("users");
 
-  const hash = bcrypt.hash(password, 10);
+  const hash = passwordHelpers.hash(password);
 
   //   await close();
 
