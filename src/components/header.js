@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import logoSvg from '../img/panda.svg';
 class Header extends Component {
   // constructor(props) {
   //   super(props);
@@ -12,7 +12,7 @@ class Header extends Component {
         <header>
           <div className="logo">
             <Link to="/">
-              <h1>TOPHAT PANDA</h1>
+              <img src={logoSvg} alt="logo" />
             </Link>
           </div>
 

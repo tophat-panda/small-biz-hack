@@ -1,0 +1,15 @@
+.logo {
+  background-color: $darkColor;
+  width: 80px;
+  //   border: 1px solid red;
+  padding: 1em;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.col-3 {
+  display: flex;
+}
