@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Answerphone from "./answerphone";
 import Endphone from "./endphone";
 import Activephonenum from "./activephonenum";
+import Phonetype from "./phonetype";
+
 
 class Phonemodal extends Component {
   render() {
@@ -9,6 +11,7 @@ class Phonemodal extends Component {
       <div>
 
         <Activephonenum />
+        <Phonetype />
         <Answerphone />
             <Endphone />
 
