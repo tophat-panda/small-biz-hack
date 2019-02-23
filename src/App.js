@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
+
 import Header from './components/header';
 
 import homepg from './pages/home';
@@ -9,6 +13,9 @@ import loginpg from './pages/login';
 import Footer from './components/footer';
 
 import './App.scss';
+
+library.add(faUser);
+library.add(faLock);
 
 class App extends Component {
   render() {
