@@ -8,13 +8,17 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.5.0",
     "mongodb": "^3.1.13",
     "node-sass": "^4.11.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-redux": "^6.0.1",
+    "react-scripts": "2.1.5",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5"
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/plugin-transform-object-assign": "^7.2.0",

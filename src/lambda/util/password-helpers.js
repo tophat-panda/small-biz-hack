@@ -15,7 +15,7 @@ export default {
   },
   compare(data, hashed) {
     return new Promise((res, rej) => {
-      bcrypt.compare(data, hash, (err, match) => {
+      bcrypt.compare(data, hashed, (err, match) => {
         if (err) {
           return rej(err);
         }

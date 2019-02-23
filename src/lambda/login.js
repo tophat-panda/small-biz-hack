@@ -1,6 +1,7 @@
 import response from "./util/response";
 import getDatabaseConnection from "./util/database";
 import passwordHelpers from "./util/password-helpers";
+import jwt from "jsonwebtoken";
 
 export async function handler(event, context) {
   if (event.httpMethod !== "POST") {
@@ -31,19 +32,17 @@ export async function handler(event, context) {
   const { dbo, close } = await getDatabaseConnection();
 
   const users = dbo.collection("users");
+  const findUser = await users.find({ username });
+  const match = await passwordHelpers.compare(password, findUser.hash);
 
-  const hash = await passwordHelpers.hash(password);
-
-  const findUser = await users.find({ username }).toArray();
-  if (findUser.length) {
+  if (!findUser || !match) {
     await close();
     return response({
-      statusCode: 400,
+      statusCode: 401,
       body: { message: "Bad request" }
     });
   }
-  const result = await users.insertOne({ username, hash });
-
   await close();
-  return response({ body: { result: result.insertedId } });
+
+  return response({ body: username }); //   return response({ body: { token: jwt.sign(username, process.env.SECRET) } });
 }
