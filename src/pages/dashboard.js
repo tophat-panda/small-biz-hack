@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import Phonemodal from "../components/phonemodal"
+
+
+
 
 class Dashboardpg extends Component {
   render() {
     return (
-      <div>
-        <p>dashboard page</p>
+      <div className="dashboard">
+      <Phonemodal />
       </div>
     );
   }
