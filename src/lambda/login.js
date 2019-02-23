@@ -32,8 +32,8 @@ export async function handler(event, context) {
   const { dbo, close } = await getDatabaseConnection();
 
   const users = dbo.collection("users");
-  const findUser = await users.find({ username });
-  const match = await passwordHelpers.compare(password, findUser.hash);
+  const findUser = await users.findOne({ username });
+  const match = await passwordHelpers.compare(password, findUser.hash || "");
 
   if (!findUser || !match) {
     await close();
@@ -44,5 +44,5 @@ export async function handler(event, context) {
   }
   await close();
 
-  return response({ body: username }); //   return response({ body: { token: jwt.sign(username, process.env.SECRET) } });
+  return response({ body: { token: jwt.sign(username, process.env.SECRET) } });
 }
