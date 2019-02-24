@@ -45,8 +45,9 @@ nav {
 }
 
 .nav-items li a:hover {
-  color: $thirdColor;
-  text-decoration: underline;
+  // color: $thirdColor;
+  // text-decoration: underline;
+  background-color: #eee;
 }
 
 .format-duration {
