@@ -5,7 +5,14 @@ const data = {
   first_name: "Luke",
   last_name: "Harris",
   email: "lukeharris01170@gmail.com",
-  phone_number: "+447957267708"
+  phone_number: "+447957267708",
+  orders: [
+    {
+      id: "5c720e2d158ab7231880842d",
+      name: "Water Bottle",
+      price: 6.99
+    }
+  ]
 };
 
 class DashboardCustomer extends Component {
