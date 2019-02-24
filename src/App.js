@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faLock,
+  faEnvelope,
+  faPhone
+} from "@fortawesome/free-solid-svg-icons";
 
 import Header from "./components/header";
 
@@ -20,6 +25,8 @@ import store from "./store";
 import "./App.scss";
 
 library.add(faUser);
+library.add(faEnvelope);
+library.add(faPhone);
 library.add(faLock);
 
 class App extends Component {

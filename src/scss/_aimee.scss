@@ -38,3 +38,24 @@
   background: #222;
   opacity: 1;
 }
+
+.customerHeader {
+  display: flex;
+}
+
+.customerCard {
+  padding: 30px;
+  background-color: #fcfcfc;
+  border-radius: 6px;
+  box-shadow: 0 2px 16px rgba(#000, 0.14);
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.orderBlock {
+  padding: 30px;
+  h3 {
+    margin-top: 0;
+  }
+}

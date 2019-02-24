@@ -9,7 +9,7 @@ class Table extends Component {
           {this.props.headers.map(header => {
             return <td>{header.text}</td>;
           })}
-          <td />
+          {!this.props.noView && <td />}
         </thead>
         <tbody>
           {this.props.data.map(row => {
@@ -18,15 +18,17 @@ class Table extends Component {
                 {this.props.headers.map(header => {
                   return <td>{row[header.key]}</td>;
                 })}
-                <td>
-                  <button
-                    onClick={() =>
-                      this.props.history.push(this.props.link(row._id))
-                    }
-                  >
-                    View
-                  </button>
-                </td>
+                {!this.props.noView && (
+                  <td>
+                    <button
+                      onClick={() =>
+                        this.props.history.push(this.props.link(row._id))
+                      }
+                    >
+                      View
+                    </button>
+                  </td>
+                )}
               </tr>
             );
           })}

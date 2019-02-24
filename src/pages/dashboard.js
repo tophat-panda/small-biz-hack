@@ -34,7 +34,7 @@ class Dashboardpg extends Component {
             />
             <Route
               exact
-              path="/dashboard/customer/5c720df9158ab7231880842c"
+              path="/dashboard/customer/:id"
               component={DashboardCustomer}
             />
           </Switch>
