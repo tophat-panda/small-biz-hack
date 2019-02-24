@@ -19,13 +19,19 @@ async function list() {
 }
 
 async function create(jsonString) {
+  console.log(jsonString);
   let first_name;
   let last_name;
   let email;
   let phone_number;
   try {
     const body = JSON.parse(jsonString);
+    first_name = body.first_name;
+    last_name = body.last_name;
+    email = body.email;
+    phone_number = body.phone_number;
   } catch (e) {
+    console.log(e);
     return response({
       statusCode: 400,
       body: { message: "Bad request" }
