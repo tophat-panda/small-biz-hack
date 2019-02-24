@@ -2,6 +2,25 @@
   background: #f9f9f9;
   display: flex;
   .dashboard-contents {
+    button {
+      margin: 3px;
+      border-radius: 3px;
+      background-color: #222;
+      color: white;
+      border: none;
+      font-size: 18px;
+      font-family: "Sarabun", sans-serif;
+      padding: 5px 15px;
+      cursor: pointer;
+      &.secondary {
+        background-color: #eee;
+        color: black;
+      }
+    }
+    .button-container {
+      margin: 0 -3px;
+    }
+    text-align: left;
     font-family: "Sarabun", sans-serif;
     h2 {
       font-weight: 800;
