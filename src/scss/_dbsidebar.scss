@@ -1,0 +1,16 @@
+.db-sidebar{
+    display:inline-block;
+    width:20%;
+    vertical-align: top;
+    background: lightblue;
+    // border: solid 1px lightgrey;
+
+}
+
+@media only screen and (max-width: 600px) {
+.db-sidebar{
+    display:block;
+    width:20%;
+
+}
+}

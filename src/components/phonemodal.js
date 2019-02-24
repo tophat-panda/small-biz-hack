@@ -8,7 +8,7 @@ import Phonetype from "./phonetype";
 class Phonemodal extends Component {
   render() {
     return (
-      <div>
+      <div className="phonemodal">
 
         <Activephonenum />
         <Phonetype />
