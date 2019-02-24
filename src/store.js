@@ -12,6 +12,7 @@ const store = createStore(
     applyMiddleware(thunk, store => next => action => {
       switch (action.type) {
         case "ANSWER_CALL":
+          next({ type: "CALL_STARTED", payload: new Date() });
           window.answer && window.answer();
           break;
         case "REJECT_CALL":

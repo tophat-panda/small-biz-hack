@@ -25,5 +25,13 @@ export default combineReducers({
       default:
         return state;
     }
+  },
+  call_started: (state = null, action) => {
+    switch (action.type) {
+      case "CALL_STARTED":
+        return action.payload;
+      default:
+        return state;
+    }
   }
 });
