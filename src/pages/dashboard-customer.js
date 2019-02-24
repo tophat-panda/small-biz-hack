@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Table from "../components/table";
 
 const data = {
   _id: "5c720df9158ab7231880842c",
@@ -22,7 +23,21 @@ class DashboardCustomer extends Component {
         <h2>
           {data.first_name} {data.last_name}
         </h2>
-        info
+        <p>t:{data.phone_number}</p>
+        <p>e:{data.email}</p>
+         <Table
+              link={id => `/dashboard/customer/${id}`}
+              headers={[
+                { key: "name", text: "Product Name" },
+                { key: "price", text: "Price" },
+
+              ]}
+              data={data.orders}
+            />
+
+
+
+
       </div>
     );
   }
