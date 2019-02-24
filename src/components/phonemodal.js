@@ -12,7 +12,6 @@ class Phonemodal extends Component {
     }
     return (
       <div className="phonemodal">
-
         <Activephonenum />
         <Phonetype />
         <Answerphone onClick={this.props.answer} />

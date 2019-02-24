@@ -33,9 +33,7 @@ class App extends Component {
               <Route exact path="/" component={homepg} />
               <Route exact path="/login" component={Loginpg} />
               <Route exact path="/register" component={Registerpg} />
-
-              <Route exact path="/dashboard" component={Dashboardpg} />
-              {/* <Route path='*' component={Not_found_pg} /> */}
+              <Route path="/dashboard" component={Dashboardpg} />
             </Switch>
             <Footer date={new Date().getFullYear()} />
           </div>

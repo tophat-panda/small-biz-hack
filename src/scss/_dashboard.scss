@@ -1,49 +1,61 @@
-.dashboard{
-    background:#f9f9f9;
-
+.dashboard {
+  background: #f9f9f9;
+  display: flex;
+  .dashboard-contents {
+    font-family: "Sarabun", sans-serif;
+    h2 {
+      font-weight: 800;
+    }
+    padding: 40px 80px;
+  }
 }
 
-.phonemodal{
-    // width:80%;
-    display: inline-block;
-}
-.phone-no-container{
-
-
-}
-
-.phonemodal-container{
-    display:inline-block;
-    width:80%;
+.phonemodal {
+  padding: 30px;
+  background-color: #fcfcfc;
+  width: 500px;
+  margin: 40px auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 16px rgba(#000, 0.14);
+  pointer-events: all;
 }
 
-
-.phone-no{
-    letter-spacing: 2px;
-    font-size: 20px;
-    font-weight:bold;
+.phonemodal-container {
+  // display:inline-block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
 }
 
-.phone-type{
-    font-size: 15px;
+.phone-no {
+  letter-spacing: 2px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.phone-btn{
-    padding: 10px 30px;
-    border-radius: 8px;
-    // opacity: 0.7;
-    margin: 10px;
-
+.phone-type {
+  font-size: 15px;
 }
 
-.endphone-btn{
-    background: #DD6E6E;
-    border: none;
-    box-shadow: 0px 1px 4px rgba($color: #DD6E6E, $alpha: 0.49);
+.phone-btn {
+  padding: 10px 30px;
+  border-radius: 8px;
+  // opacity: 0.7;
+  margin: 10px;
+  cursor: pointer;
 }
 
-.answerphone-btn{
-    background: #8FDD6E;
-    border: none;
-    box-shadow: 0px 1px 4px rgba($color: #8FDD6E, $alpha: 0.49);
+.endphone-btn {
+  background: #dd6e6e;
+  border: none;
+  box-shadow: 0px 1px 4px rgba($color: #dd6e6e, $alpha: 0.49);
+}
+
+.answerphone-btn {
+  background: #8fdd6e;
+  border: none;
+  box-shadow: 0px 1px 4px rgba($color: #8fdd6e, $alpha: 0.49);
 }
