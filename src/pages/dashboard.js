@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router";
 import { connect } from "react-redux";
 import CustomersDashboard from "./dashboard-customers";
 import SettingsDashboard from "./dashboard-settings";
+import DashboardCustomer from "./dashboard-customer";
 import Phonemodal from "../components/phonemodal";
 import Dbsidebar from "../components/dbsidebar";
 
@@ -24,6 +25,11 @@ class Dashboardpg extends Component {
               exact
               path="/dashboard/settings"
               component={SettingsDashboard}
+            />
+            <Route
+              exact
+              path="/dashboard/customer/5c720df9158ab7231880842c"
+              component={DashboardCustomer}
             />
           </Switch>
         </div>

@@ -24,13 +24,11 @@ class Header extends Component {
               {this.props.callInProgress ? (
                 <ActiveCall />
               ) : (
-                <Fragment>
-                  <li>
-                    <Link to="/register" className="nav-link">
-                      Logout
-                    </Link>
-                  </li>
-                </Fragment>
+                <li>
+                  <Link to="/register" className="nav-link">
+                    Logout
+                  </Link>
+                </li>
               )}
             </ul>
           </nav>

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import formatDuration from "format-duration";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import Endphone from "./endphone";
 
 class ActiveCall extends Component {
@@ -25,6 +26,14 @@ class ActiveCall extends Component {
         </li>
         <li>
           <Endphone onClick={this.props.reject} />
+        </li>
+        <li>
+          <Link
+            to="/dashboard/customer/5c720df9158ab7231880842c"
+            className="nav-link"
+          >
+            View customer
+          </Link>
         </li>
       </Fragment>
     );

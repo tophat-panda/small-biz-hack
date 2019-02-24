@@ -11,6 +11,16 @@ class Dbsidebar extends Component {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/dashboard/orders" activeClassName="active">
+            Orders
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/dashboard/products" activeClassName="active">
+            Products
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/dashboard/settings" activeClassName="active">
             Settings
           </NavLink>
