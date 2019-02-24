@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import CustomersDashboard from "./dashboard-customers";
 import SettingsDashboard from "./dashboard-settings";
 import DashboardCustomer from "./dashboard-customer";
+import DashboardOrders from "./dashboard-orders";
 import Phonemodal from "../components/phonemodal";
 import Dbsidebar from "../components/dbsidebar";
 
@@ -20,6 +21,11 @@ class Dashboardpg extends Component {
               exact
               path="/dashboard/customers"
               component={CustomersDashboard}
+            />
+            <Route
+              exact
+              path="/dashboard/orders"
+              component={DashboardOrders}
             />
             <Route
               exact

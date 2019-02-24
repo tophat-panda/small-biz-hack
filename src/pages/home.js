@@ -16,11 +16,12 @@ function homepg() {
             </Link>
           </div>
 
-
+{/*
     <div className="page">
       <p>THIS IS THE HOME PAGE... Add what you want here</p>
       <HomeText headingTitle="titleofsection" />
-    </div>
+    </div> */}
+
     </div>
 
 

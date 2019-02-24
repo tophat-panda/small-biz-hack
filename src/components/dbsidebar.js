@@ -15,7 +15,7 @@ class Dbsidebar extends Component {
             Orders
           </NavLink>
         </li>
-        <li>
+       {/*} <li>
           <NavLink to="/dashboard/products" activeClassName="active">
             Products
           </NavLink>
@@ -24,7 +24,7 @@ class Dbsidebar extends Component {
           <NavLink to="/dashboard/settings" activeClassName="active">
             Settings
           </NavLink>
-        </li>
+        </li>*/}
       </ul>
     );
   }
