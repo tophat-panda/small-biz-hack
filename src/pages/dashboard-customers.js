@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form, Field } from "react-final-form";
 import axios from "axios";
 import Table from "../components/table";
+import Loading from "../components/loading";
 
 class CustomersDashboard extends Component {
   state = {
@@ -36,6 +37,9 @@ class CustomersDashboard extends Component {
       });
   };
   render() {
+    if (this.state.loading) {
+      return <Loading />;
+    }
     return (
       <div>
         <h2>Customers</h2>
