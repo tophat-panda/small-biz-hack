@@ -15,7 +15,7 @@ nav {
 .nav-items {
   font-size: 1em;
   font-weight: 700;
-  font-family: 'Fjalla One', sans-serif;
+  font-family: "Sarabun", sans-serif;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -29,17 +29,26 @@ nav {
 }
 
 .nav-items li a {
-  color: $lightColor;
+  color: $darkColor;
+  background-color: $lightColor;
+  border-radius: 3px;
+  padding: 10px 50px;
+  text-decoration: none;
+
   transition: all 0.2s ease-out;
   font-weight: 700;
 
-  @media screen and (min-width: 680px) {
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-  }
+  // @media screen and (min-width: 680px) {
+  //   border-top-right-radius: 15px;
+  //   border-top-left-radius: 15px;
+  // }
 }
 
 .nav-items li a:hover {
   color: $thirdColor;
   text-decoration: underline;
+}
+
+.format-duration {
+  color: white;
 }

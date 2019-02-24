@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import logoSvg from '../img/panda.svg';
+import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import ActiveCall from "./activecall";
+import logoSvg from "../img/panda.svg";
+
 class Header extends Component {
   // constructor(props) {
   //   super(props);
@@ -18,16 +21,17 @@ class Header extends Component {
 
           <nav>
             <ul className="nav-items">
-              <li>
-                <Link to="/login" className="nav-link">
-                  Login
-                </Link>
-              </li>
-              <li>
-                <Link to="/register" className="nav-link">
-                  Register
-                </Link>
-              </li>
+              {this.props.callInProgress ? (
+                <ActiveCall />
+              ) : (
+                <Fragment>
+                  <li>
+                    <Link to="/register" className="nav-link">
+                      Logout
+                    </Link>
+                  </li>
+                </Fragment>
+              )}
             </ul>
           </nav>
         </header>
@@ -36,4 +40,6 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default connect(state => ({
+  callInProgress: state.call_in_progress
+}))(Header);

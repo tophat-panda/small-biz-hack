@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import rootReducer from "./root-reducer";
 
 window.answer = null;
+window.reject = null;
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -11,7 +12,12 @@ const store = createStore(
     applyMiddleware(thunk, store => next => action => {
       switch (action.type) {
         case "ANSWER_CALL":
+          next({ type: "CALL_STARTED", payload: new Date() });
           window.answer && window.answer();
+          break;
+        case "REJECT_CALL":
+          window.reject && window.reject();
+          break;
       }
       next(action);
     })
@@ -23,14 +29,16 @@ console.log(process.env.REACT_APP_NEXMO_TOKEN);
 new window.ConversationClient()
   .login(process.env.REACT_APP_NEXMO_TOKEN)
   .then(application => {
-    console.log("initialized");
     window.nexmo = application;
 
     application.on("member:call", (member, call) => {
-      console.log("INCOMING CALL");
+      store.dispatch({ type: "INCOMING_CALL", payload: call });
       window.answer = () => call.answer();
+      window.reject = () => call.reject();
     });
-    application.on("call:state:change");
+    application.on("call:status:changed", call => {
+      store.dispatch({ type: "SET_CALL_STATUS", payload: call.status });
+    });
   });
 
 export default store;
